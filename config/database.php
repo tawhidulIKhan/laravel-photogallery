@@ -2,10 +2,21 @@
 
 $url = parse_url(getenv("DATABASE_URL"));
 
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
+if($url['path']){
+    $host = $url["host"] ? $url["host"] : env('DB_HOST', '127.0.0.1');
+    $username = $url["user"] ? $url["user"] : env('DB_USERNAME', 'forge');
+    $password = $url["pass"] ? $url["pass"] : env('DB_PASSWORD', '');
+    $database = substr($url["path"], 1) ? substr($url["path"], 1) : env('DB_DATABASE', 'forge');
+    
+}else{
+
+    $host = env('DB_HOST', '127.0.0.1');
+    $username = env('DB_DATABASE', 'forge');
+    $password = env('DB_USERNAME', 'forge');
+    $database = env('DB_PASSWORD', '');
+    
+}
+
 
 
 return [
@@ -66,10 +77,10 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host'     => $host,
-            'database' => $database,
-            'username' => $username,
-            'password' => $password,
+            'host' => $host,
+            'database' =>  $database,
+            'username' =>  $username,
+            'password' =>  $password,
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
