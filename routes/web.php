@@ -68,6 +68,7 @@ Route::group(['prefix'=>'/admin'],function(){
     Route::resource('/album','AlbumController');
     Route::resource('/photo','PhotoController');
     Route::resource('/team','TeamController');
+    Route::resource('/settings','SettingController');
     Route::resource('/service','ServiceController');
     Route::resource('/contactinfo','ContactInfoController');
     Route::resource('/permission','PermissionController');

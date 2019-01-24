@@ -23,12 +23,18 @@ return [
         ],
         'contributor' => [
             'profile' => 'r,u',
+            'albums' => 'c,r,u,d',
             'photos' => 'c,r,u,d',
         ],
     ],
     'permission_structure' => [
         'cru_user' => [
-            'profile' => 'c,r,u'
+            'profile' => 'c,r,u',
+            'photos' => 'c,r,u,d',
+            'albums' => 'c,r,u,d',
+            'teams' => 'c,r,u,d',
+            'services' => 'c,r,u,d',
+            'contactinfos' => 'c,r,u,d'
         ],
     ],
     'permissions_map' => [

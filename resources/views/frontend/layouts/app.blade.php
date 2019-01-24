@@ -51,7 +51,8 @@
       <p>
       <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
      This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-     & backend by  <a href="https://github.com/tawhid-coder" target="_blank" >Tawhidul Islam Khan</a>
+     & 
+     {!! setting('site_copyright') !!}
       <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
       </p>
     </div>

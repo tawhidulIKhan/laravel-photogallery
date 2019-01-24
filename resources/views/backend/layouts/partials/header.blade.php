@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-<a class="navbar-brand mr-1" href="{{ route('homepage') }}">Photon Dashboard</a>
+<a class="navbar-brand mr-1" href="{{ route('homepage') }}">{{setting('site_title')}}</a>
 
 
     <!-- Navbar Search -->

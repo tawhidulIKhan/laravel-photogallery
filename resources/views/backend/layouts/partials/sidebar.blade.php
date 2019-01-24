@@ -9,7 +9,7 @@
                   <span>Dashboard</span>
                 </a>
               </li>
-              @role('admin|superadministrator')
+              @permission('create-albums')
                   
               <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,7 +22,7 @@
                     </div>
                   </li>
 
-                  @endrole
+                  @endpermission
 
                   <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -98,7 +98,20 @@
                                   <a class="dropdown-item" href="{{ route('role.index') }}">All Roles</a>
                                   </div>
                                 </li>
-                                
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" 
+                                    id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <i class="fas fa-fw fa-folder"></i>
+                                      <span>Settings</span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                                    <a class="dropdown-item" href="{{ route('settings.create') }}">Add New Setting</a>
+                                    <a class="dropdown-item" href="{{ route('settings.index') }}">All Settings</a>
+                                    </div>
+                                  </li>
+
+                                  
                                     @endrole
         
                                     @role('superadministrator')

@@ -36,6 +36,20 @@
                         <label for="description">Description</label>
                     <input type="text" class="form-control" name="description" value="{{ $role->description }}">
                     </div>
+
+                    <div class="form-group">
+                        <label for="permission">Permissions</label>
+                        <select name="permissions[]" class="form-control" multiple id="permission">
+
+                            @if (count($permissions) > 0)
+                                @foreach ($permissions as $permission)
+                        <option value="{{ $permission->name }}" {{ in_array($permission['id'],$role->permissions->pluck('id')->toArray()) ? 'selected' : '' }} >
+                            {{ $permission->display_name }}
+                        </option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
     
         </div>
             

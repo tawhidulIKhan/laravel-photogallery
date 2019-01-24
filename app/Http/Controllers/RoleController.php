@@ -96,6 +96,7 @@ class RoleController extends Controller
     public function edit(Role $role)
     {
         $data["role"] = $role;
+        $data["permissions"] = Permission::all();
         return view("backend.role.edit",$data);
     }
 
@@ -122,6 +123,7 @@ class RoleController extends Controller
         'description' => $request->description,
     ]);
 
+    $role->syncPermissions($request->permissions);
         
         session()->flash('type','success');
         session()->flash('message','Role Successfully Updated');

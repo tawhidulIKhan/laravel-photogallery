@@ -25,7 +25,8 @@
                       <p>{{
                         $ourservice->description
                         }}</p>
-                        <p><strong class="font-weight-bold text-primary">{{ $ourservice->price}}</strong></p>
+                        <p><strong class="font-weight-bold text-primary">
+                          {{ $ourservice->price()}}</strong></p>
                       </div>
                     </div>
                             

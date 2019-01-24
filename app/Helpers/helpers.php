@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
+
 function photon_notification($errors){
     
     if(session()->has('message')):
@@ -99,4 +101,15 @@ function photon_selected($post,$item){
 
 
     return ($post === $item ) ? 'selected' : '';
+}
+
+
+function setting($key){
+    
+    try{
+        $value = DB::table('settings')->where('key',$key)->first()->value;
+        return $value;
+    }catch(Exception $e){
+        return;
+    }
 }
